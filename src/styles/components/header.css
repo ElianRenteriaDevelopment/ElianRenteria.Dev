@@ -47,10 +47,12 @@
         font-weight: 600;
         color: var(--clr-slate600);
         letter-spacing: -0.05em;
+        transition: all 0.75s;
     }
     
     .header__link:hover {
         color: var(--clr-rose);
+        transition: all 0.75s;
     }
     
     .header__resume {

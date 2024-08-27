@@ -89,7 +89,7 @@
           </div>
         </div>
       </section>
-      <section class="section"></section>
+      <section class="section">contact</section>
       <section class="section"></section>
     </main>
     <footer>
@@ -97,4 +97,5 @@
 </template>
 
 <style scoped>
+    
 </style>

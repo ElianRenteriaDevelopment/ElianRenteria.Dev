@@ -39,10 +39,12 @@
     
     .title {
         color: #f1f5f9;
-        font-size: 28px; 
+        font-size: 2rem; 
         text-align: center;
         font-family: 'Roboto', sans-serif !important; 
         font-weight: 100 !important;
+        letter-spacing: -0.02em;
+        line-height: 0.9;
     }
     
     .name {

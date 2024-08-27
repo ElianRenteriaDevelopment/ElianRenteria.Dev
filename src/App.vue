@@ -55,7 +55,7 @@
 </script>
 
 <template>
-  <div class="">
+  <div class="app__container">
     <div class="Background">
       <Background />
     </div>
