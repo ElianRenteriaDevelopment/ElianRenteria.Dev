@@ -13,7 +13,7 @@
   };
 
   const fadeInContent = () => {
-    const content = document.querySelector('.content');
+    const content = document.querySelector('.app__content');
     content.classList.add('fade-in');
   };
 
@@ -55,12 +55,12 @@
 </script>
 
 <template>
-  <div class="container">
+  <div class="">
     <div class="Background">
       <Background />
     </div>
     <Loading v-if="isLoading" class="loading prevent-hover-change"/>
-    <div v-else class="content">
+    <div v-else class="app__content">
       <NavBar />
       <router-view />
     </div>
@@ -77,16 +77,15 @@
     opacity: 0;
   }
 
-  .content {
+  .app__content {
     opacity: 0;
     transition: opacity 2s ease-in; 
     font-family: 'Roboto', sans-serif !important;
     font-weight: 300 !important;
-    text-align: center;
     height: 100vh;
   }
 
-  .content.fade-in {
+  .app__content.fade-in {
     opacity: 1;
   }
 
