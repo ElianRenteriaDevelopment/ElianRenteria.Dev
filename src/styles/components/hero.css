@@ -46,7 +46,7 @@
 /* XS */
 @media (min-width: 475px) {
     .hero {
-        gap: 1.5rem;
+        gap: .5rem;
     }
     
     .hero__img {

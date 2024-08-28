@@ -81,9 +81,13 @@
     }
 
 /* XS */
-/* @media (min-width: 475px) {
-    
-} */
+@media (min-width: 475px) {
+  .p-card{
+        width: 400px;
+        height: 500px;
+        margin-top: 10%;
+  }
+}
 
 /* SM */
 @media (min-width: 640px) {

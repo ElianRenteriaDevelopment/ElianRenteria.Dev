@@ -6,7 +6,7 @@ import {PrimeVueResolver} from '@primevue/auto-import-resolver';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/ElianRenteria.Dev_v2/',
+  base: '',
   plugins: [
     vue(),
     Components({

@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy to Web Server
 
 on:
   push:
@@ -11,29 +11,54 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v2
 
     - name: Set up Node.js
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v2
       with:
-        node-version: '18'
+        node-version: '20'
 
     - name: Install dependencies
-      run: npm ci
+      run: npm install
 
     - name: Create .env file
-      run: echo "VITE_githubToken=${{ secrets.PROJECTS_TOKEN }}" > .env
-    
-    - name: Add .env to .gitignore
       run: |
-        echo ".env" >> .gitignore
+        echo "VITE_githubToken=${{ secrets.PROJECTS_TOKEN }}" >> .env
 
-    - name: Build the project
+    - name: Build project
       run: npm run build
 
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.TOKEN }}
-        publish_dir: ./dist
-        # Change this if your build output directory is different
+    - name: Copy files via scp
+      env:
+        SERVER_USER: ${{ secrets.SERVER_USER }}
+        SERVER_IP: ${{ secrets.SERVER_IP }}
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      run: |
+        mkdir -p ~/.ssh
+        echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        # Remove old dist folder from server
+        ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_IP "rm -rf /root/nginx-docker/dist"
+        # Copy new dist folder
+        scp -r ./dist $SERVER_USER@$SERVER_IP:/root/nginx-docker/
+
+    - name: Rebuild and restart NGINX container
+      env:
+        SERVER_USER: ${{ secrets.SERVER_USER }}
+        SERVER_IP: ${{ secrets.SERVER_IP }}
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      run: |
+        ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_IP << EOF
+          # Stop and remove the old container
+          docker stop my_custom_nginx || true
+          docker rm my_custom_nginx || true
+          
+          # Navigate to the directory containing the Dockerfile
+          cd /root/nginx-docker
+          
+          # Rebuild the Docker image
+          docker build -t mynginx .
+          
+          # Run the new container with port forwarding
+          docker run -d --restart always --name my_custom_nginx -p 80:80 -p 443:443 mynginx
+        EOF
