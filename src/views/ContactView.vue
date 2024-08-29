@@ -28,9 +28,6 @@
   
   .p-card{
     background-color: #030e3f8a;
-    width: 90%;
-    height: 60%;
-    margin-top: 20%;
     transition: all 0.3s ease;
   }
   .social-links {
@@ -73,58 +70,10 @@
 
     p{
         color: var(--clr-slate400);
-        font-size: var(--size-xl);
+        font-size: var(--size-lg);
         font-weight: 400;
         text-align: center;
         padding-top: 1rem;
         padding-bottom: 2rem;
     }
-
-/* XS */
-@media (min-width: 475px) {
-  .p-card{
-        width: 400px;
-        height: 500px;
-        margin-top: 10%;
-  }
-}
-
-/* SM */
-@media (min-width: 640px) {
-    .p-card{
-        width: 470px;
-        height: 550px;
-        margin-top: 10%;
-  }
-}
-
-/* MD */
-@media (min-width: 768px) {
-    .p-card{
-        width: 470px;
-        height: 550px;
-        margin-top: 8%;
-  }
-}
-
-/* LG */
-.p-card{
-        width: 470px;
-        height: 550px;
-        margin-top: 6%;
-  }
-
-/* XLG */
-@media (min-width: 1280px) {
-    .p-card{
-        width: 470px;
-        height: 550px;
-        margin-top: 5%;
-  }
-}
-
-/* 2XLG */
-/* @media (min-width: 1536px) {
-    
-} */
   </style>
