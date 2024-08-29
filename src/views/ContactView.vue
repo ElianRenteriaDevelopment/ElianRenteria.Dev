@@ -15,8 +15,8 @@
                 <p>+1 909-314-3799</p>
                 <h2>Social Media:</h2>
                 <div class="social-links pt-1 pb-5">
-                    <a href="https://linkedin.com/in/elian-renteria-5a467b29b" target="_blank"><i class="pi pi-linkedin" style="font-size: 3.5rem"></i></a>
-                    <a href="https://github.com/elianrenteria" target="_blank"><i class="pi pi-github" style="font-size: 3.5rem"></i></a>
+                    <a href="https://linkedin.com/in/elian-renteria-5a467b29b" target="_blank"><i class="pi pi-linkedin social__link"></i></a>
+                    <a href="https://github.com/elianrenteria" target="_blank"><i class="pi pi-github social__link"></i></a>
                 </div>
             </template>
         </Card>
@@ -76,6 +76,9 @@
         padding-top: .5rem;
         padding-bottom: 1rem;
     }
+    .social__link {
+        font-size: 2.5rem;
+    }
 
 /* XS */
 @media (min-width: 475px) {
@@ -107,6 +110,9 @@
         font-size: var(--size-xl);
         padding-top: 1rem;
         padding-bottom: 2rem;
+    }
+    .social__link {
+        font-size: 3.5rem;
     }
 }
 
