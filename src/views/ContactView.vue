@@ -53,27 +53,75 @@
 
     h1 {
         color: rgba(224, 224, 224, 0.849);
-        font-size: var(--size-4xl);
+        font-size: var(--size-xl);
         font-weight: 600;
         text-align: center;
+        padding-top: 1rem;
+        padding-bottom: .5rem;
+    }
+
+    h2 {
+        color: var(--clr-slate600);
+        font-size: var(--size-base);
+        font-weight: 500;
+        text-align: center;
+        padding-top: .5rem;
+    }
+
+    p{
+        color: var(--clr-slate400);
+        font-size: var(--size-sm);
+        font-weight: 400;
+        text-align: center;
+        padding-top: .5rem;
+        padding-bottom: 1rem;
+    }
+
+/* XS */
+@media (min-width: 475px) {
+}
+
+/* SM */
+@media (min-width: 640px) {
+}
+
+/* MD */
+@media (min-width: 768px) {
+    .p-card{
+        width: 470px;
+        height: 550px;
+        margin-top: 8%;
+  }
+  h1 {
+        font-size: var(--size-4xl);
         padding-top: 2rem;
         padding-bottom: 1rem;
     }
 
     h2 {
-        color: var(--clr-slate600);
         font-size: var(--size-2xl);
-        font-weight: 500;
-        text-align: center;
         padding-top: 1rem;
     }
 
     p{
-        color: var(--clr-slate400);
-        font-size: var(--size-lg);
-        font-weight: 400;
-        text-align: center;
+        font-size: var(--size-xl);
         padding-top: 1rem;
         padding-bottom: 2rem;
     }
+}
+
+/* LG */
+/* XLG */
+@media (min-width: 1280px) {
+    .p-card{
+        width: 470px;
+        height: 550px;
+        margin-top: 5%;
+  }
+}
+
+/* 2XLG */
+/* @media (min-width: 1536px) {
+    
+} */
   </style>
