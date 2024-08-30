@@ -106,7 +106,7 @@
       <section class="section container">
         <h2 class="aboutSite__title">🌐 About This Site</h2>
         <div class="flex flex-column align-items-center">
-          <p class="aboutSite__subtitle">Made With</p>
+          <p class="aboutSite__subtitle">Built With</p>
           <div class="flex justify-content-center align-items-center aboutSite__tech">
             <img src="../assets/images/aboutSite/vue-svgrepo-com.svg" alt="Vue">
             <img src="../assets/images/aboutSite/primevue-logo.webp" alt="PrimeVue">
