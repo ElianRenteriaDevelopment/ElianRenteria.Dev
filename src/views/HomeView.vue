@@ -2,6 +2,7 @@
     import '../styles/components/hero.css'
     import '../styles/components/about.css'
     import '../styles/components/featured.css'
+    import '../styles/components/footer.css'
 </script>
 
 <template>
@@ -89,8 +90,14 @@
           </div>
         </div>
       </section>
-      <section class="section">contact</section>
-      <section class="section"></section>
+      <section class="section container">
+        <div>
+          <h2>Contact</h2>
+        </div>
+      </section>
+      <section class="section container">
+        <p class="footer__logo">~Elian Renteria~</p>
+      </section>
     </main>
     <footer>
     </footer>
