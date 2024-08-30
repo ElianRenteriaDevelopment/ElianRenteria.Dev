@@ -3,6 +3,7 @@
     import '../styles/components/about.css'
     import '../styles/components/featured.css'
     import '../styles/components/footer.css'
+    import '../styles/components/aboutSite.css'
 </script>
 
 <template>
@@ -12,7 +13,7 @@
         <h2 class="hero__subtitle">Hi, I'm Elian 🐥</h2>
         <h1 class="hero__title">JUNIOR<br>SOFTWARE ENGINEER</h1>
         <p class="hero__description">I create <strong>Web / Mobile / Cloud</strong> apps that solve real problems. Whether it’s Python, JavaScript, or whatever tool fits the job, I’m all about building <strong>Secure</strong> and <strong>Scalable</strong> solutions. Let’s make something impactful together.</p>
-        <a class="hero__btn btn" href="#">Reach out</a>
+        <RouterLink class="hero__btn btn" to="/contact">Reach out</RouterLink>
       </section>
       <section class="about container section">
         <div class="about__content">
@@ -89,14 +90,45 @@
             <p class="featured__info">August 2023-December 2023</p>
           </div>
         </div>
+        <p class="featured__img__title">login screen</p>
+        <div class="w-full flex justify-content-center"><img src="../assets/images/parkingBuddy/login.png" class="featured__img"></div>
+        <p class="featured__img__title">database structure</p>
+        <div class="w-full flex justify-content-center"><img src="../assets/images/parkingBuddy/database.png" class="featured__img"></div>
+        <p class="featured__img__title">parking structure UI</p>
+        <div class="w-full flex justify-content-center"><img src="../assets/images/parkingBuddy/map1.png" class="featured__img"></div>
+        <p class="featured__img__title">parking lot UI</p>
+        <div class="w-full flex justify-content-center"><img src="../assets/images/parkingBuddy/map2.png" class="featured__img"></div>
+        <p class="featured__img__title">university API implementation</p>
+        <div class="w-full flex justify-content-center"><img src="../assets/images/parkingBuddy/map3.png" class="featured__img"></div>
+        <p class="featured__img__title">Lot Status map overlay</p>
+        <div class="w-full flex justify-content-center"><img src="../assets/images/parkingBuddy/map4.png" class="featured__img"></div>
       </section>
       <section class="section container">
-        <div>
-          <h2>Contact</h2>
+        <h2 class="aboutSite__title">🌐 About This Site</h2>
+        <div class="flex flex-column align-items-center">
+          <p class="aboutSite__subtitle">Made With</p>
+          <div class="flex justify-content-center align-items-center aboutSite__tech">
+            <img src="../assets/images/aboutSite/vue-svgrepo-com.svg" alt="Vue">
+            <img src="../assets/images/aboutSite/primevue-logo.webp" alt="PrimeVue">
+            <img src="../assets/images/aboutSite/tailwind-svgrepo-com.svg" alt="TailwindCSS">
+            <img src="../assets/images/aboutSite/Threejs-logo.svg" alt="ThreeJS">
+          </div>
+          <p class="aboutSite__subtitle">Deployed Using</p>
+          <div class="flex justify-content-center align-items-center aboutSite__tech">
+            <img src="../assets/images/aboutSite/git-svgrepo-com.svg" alt="Git">
+            <img src="../assets/images/aboutSite/github-svgrepo-com.svg" alt="Github">
+            <img src="../assets/images/aboutSite/docker-svgrepo-com (1).svg" alt="Docker">
+            <img src="../assets/images/aboutSite/nginx-svgrepo-com.svg" alt="Nginx">
+            <img src="../assets/images/aboutSite/GitHub Actions.svg" alt="GitHub Actions">
+          </div>
+          <p class="aboutSite__subtitle">Deployed On</p>
+          <div class="flex justify-content-center align-items-center aboutSite__tech">
+            <img src="../assets/images/aboutSite/digital-ocean-svgrepo-com.svg" alt="Digital Ocean">
+          </div>
         </div>
       </section>
       <section class="section container">
-        <p class="footer__logo">~Elian Renteria~</p>
+        <p class="footer__logo" style="opacity: .5;">~Elian Renteria~</p>
       </section>
     </main>
     <footer>
