@@ -61,7 +61,7 @@
 .featured__img{
     border-radius: 1rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, .2);
-    width: 100%;
+    width: 90%;
     height: auto;
     margin-top: .5rem;
     opacity: 0.85;
