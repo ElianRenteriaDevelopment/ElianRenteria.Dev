@@ -28,7 +28,7 @@ const fetchProjects = async () => {
     let page = 1;
     let response;
     do {
-      response = await axios.get(`https://api.github.com/users/ElianRenteria/repos?page=${page}&per_page=100`, {
+      response = await axios.get(`https://api.github.com/users/ElianRenteria/repos?page=${page}&per_page=100&sort=updated&direction=desc`, {
         headers: {
           Authorization: `Bearer ${githubToken}`
         }
