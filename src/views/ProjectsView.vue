@@ -44,7 +44,7 @@ const fetchProjects = async () => {
     }));
 
     // Update state
-    projects.value = allRepos;
+    projects.value = allRepos.filter(repo => repo.name !== 'ElianRenteria')
     isLoading.value = false;
     console.log(allRepos[0].languages);
   } catch (error) {
