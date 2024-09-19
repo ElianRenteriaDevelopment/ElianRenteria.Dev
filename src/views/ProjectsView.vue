@@ -19,6 +19,15 @@ const languages = {
 
 const isLoading = ref(true);
 const projects = ref([]);
+const selectedLanguage = ref('');  // Language filter state
+
+// Computed property to filter projects by selected language
+const filteredProjects = computed(() => {
+  if (!selectedLanguage.value) return projects.value;
+  return projects.value.filter(project =>
+    project.languages.includes(selectedLanguage.value)
+  );
+});
 
 const fetchProjects = async () => {
   try {
@@ -62,9 +71,19 @@ onMounted(() => {
 <template>
   <div class="projects-grid">
     <h2>My Projects</h2>
+
+    <!-- Language filter dropdown -->
+    <div class="language-filter">
+      <select v-model="selectedLanguage" id="language">
+        <option value="">All Languages</option>
+        <option v-for="(iconPath, lang) in languages" :key="lang" :value="lang">{{ lang }}</option>
+      </select>
+    </div>
+
     <div class="p_spinner" v-if="isLoading"><ProgressSpinner /></div>
+
     <ul class="grid-container">
-      <li v-for="project in projects" :key="project.id">
+      <li v-for="project in filteredProjects" :key="project.id">
         <a :href="project.html_url" target="_blank" class="card-link">
           <Card class="project-card">
             <template #header>
@@ -95,6 +114,7 @@ onMounted(() => {
   </div>
 </template>
 
+
 <style scoped>
 .card__languages {
     color: rgba(79, 70, 229,.95);
@@ -117,6 +137,21 @@ onMounted(() => {
     width: 40px;
   height: auto;
 }
+.language-filter {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.language-filter select {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--clr-indigo);
+  background-color: rgba(17, 24, 34, 0.8);
+  color: white;
+}
+
 
 .p_spinner {
   display: flex;
