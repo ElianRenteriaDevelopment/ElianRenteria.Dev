@@ -16,7 +16,7 @@ const languages = {
   'C++': '/languageIcons/C++.svg', 
   'Dockerfile': '/languageIcons/dock.svg',
   'React': '/languageIcons/React.svg',
-  'Svelte': '/languageIcons/Svelte.svg',
+  'Svelte': '/languageIcons/Svelte.png',
   'Go': '/languageIcons/Go.svg',
 };
 
