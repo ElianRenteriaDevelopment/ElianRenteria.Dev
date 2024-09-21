@@ -14,7 +14,10 @@ const languages = {
   'Vue': '/languageIcons/Vue.svg', 
   'C': '/languageIcons/C.svg', 
   'C++': '/languageIcons/C++.svg', 
-  'Dockerfile': '/languageIcons/dock.svg'
+  'Dockerfile': '/languageIcons/dock.svg',
+  'React': '/languageIcons/React.svg',
+  'Svelte': '/languageIcons/Svelte.svg',
+  'Go': '/languageIcons/Go.svg',
 };
 
 const isLoading = ref(true);
