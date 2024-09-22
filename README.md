@@ -29,6 +29,3 @@ This repository contains the source code for my personal portfolio website.
    npm run dev
    ```
 
-## License
-
-This project is licensed under the MIT License.
