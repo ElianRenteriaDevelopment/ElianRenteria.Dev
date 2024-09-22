@@ -17,7 +17,7 @@ const languages = {
   'Dockerfile': '/languageIcons/dock.svg',
   'React': '/languageIcons/React.svg',
   'Svelte': '/languageIcons/Svelte.png',
-  'Go': '/languageIcons/Go.png',
+  'Go': '/languageIcons/Go.svg',
 };
 
 const isLoading = ref(true);
