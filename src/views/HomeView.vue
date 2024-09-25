@@ -65,7 +65,7 @@
         <h3 class="featured__subtitle">Featured Project</h3>
         <div class="featured__wrapper">
           <h2 class="featured__title">🚘 Parking Buddy</h2>
-          <a class="featured__link"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" /></svg></a>
+          <a class="featured__link" href="https://github.com/ElianRenteria/ParkingBuddy"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" /></svg></a>
         </div>
         <p class="featured__description">CSUSM has multiple parking lots, however, during the rush hours, it is still very difficult for students to find a parking spot. Sometimes students may need to move across different parking lots in order to find one, which could cause significant delays. To help resolve this, this project aims to build a crowd-sourced mobile app that allows students to contribute their nearby parking spots info. At the same time, students using this app could quickly and easily find an available parking spot. Around 14,000 students on campus will use this app, potentially impacting the whole CSUSM community.</p>
         <div class="featured__info-container">
