@@ -123,6 +123,7 @@
         width: 470px;
         height: 550px;
         margin-top: 5%;
+        margin-bottom: 5%;
   }
 }
 
