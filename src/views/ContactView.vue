@@ -91,25 +91,24 @@
 /* MD */
 @media (min-width: 768px) {
     .p-card{
-        width: 470px;
-        height: 550px;
-        margin-top: 8%;
+        width: 420px;
+        height: 470px;
   }
   h1 {
         font-size: var(--size-4xl);
-        padding-top: 2rem;
+        padding-top: 1rem;
         padding-bottom: 1rem;
     }
 
     h2 {
         font-size: var(--size-2xl);
-        padding-top: 1rem;
+        padding-top: .5rem;
     }
 
     p{
         font-size: var(--size-xl);
-        padding-top: 1rem;
-        padding-bottom: 2rem;
+        padding-top: .75rem;
+        padding-bottom: 1rem;
     }
     .social__link {
         font-size: 3.5rem;
@@ -118,14 +117,8 @@
 
 /* LG */
 /* XLG */
-@media (min-width: 1280px) {
-    .p-card{
-        width: 470px;
-        height: 550px;
-        margin-top: 5%;
-        margin-bottom: 5%;
-  }
-}
+/* @media (min-width: 1280px) {
+} */
 
 /* 2XLG */
 /* @media (min-width: 1536px) {
