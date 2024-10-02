@@ -29,6 +29,7 @@
   .p-card{
     background-color: #030e3f8a;
     transition: all 0.3s ease;
+    margin-top: 3%;
   }
   .social-links {
     width: 100%;
