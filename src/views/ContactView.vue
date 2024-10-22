@@ -1,5 +1,11 @@
 <script setup>
-    
+    function copyToClipboard(text) {
+        navigator.clipboard.writeText(text).then(() => {
+            console.log('Email copied to clipboard!');
+        }).catch((err) => {
+            console.error('Could not copy text: ', err);
+        });
+    }
 </script>
 
 <template>
@@ -10,7 +16,10 @@
             </template>
             <template #content>
                 <h2>Email:</h2>
-                <p>elianrenteriadevelopment@gmail.com</p>
+                <div class="email-container">
+                    <p>elianrenteriadevelopment@gmail.com </p>
+                    <i class="pi pi-copy copy-icon" @click="copyToClipboard('elianrenteriadevelopment@gmail.com')" title="Copy email"></i>
+                </div>
                 <h2>Phone:</h2>
                 <p>+1 909-314-3799</p>
                 <h2>Social Media:</h2>
@@ -79,6 +88,22 @@
     }
     .social__link {
         font-size: 2.5rem;
+    }
+    .email-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .email-container i {
+        font-size: 1.20rem
+    }
+
+    .email-container i:hover {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.3rem;
+        cursor: pointer;
     }
 
 /* XS */
