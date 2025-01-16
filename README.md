@@ -9,6 +9,7 @@ This repository contains the source code for my personal portfolio website.
 - Includes **Three.js** animations.
 - Fully responsive design.
 - Integrated with the **GitHub API** to display repositories.
+- Built pipeline using github actions to automate deployment and testing
 
 ## Installation
 
