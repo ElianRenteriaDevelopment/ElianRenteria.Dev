@@ -6,59 +6,23 @@ on:
       - main
 
 jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-
+  deploy:
+    runs-on: LegionT5
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '20'
-
-    - name: Install dependencies
-      run: npm install
-
-    - name: Create .env file
-      run: |
-        echo "VITE_githubToken=${{ secrets.PROJECTS_TOKEN }}" >> .env
-
-    - name: Build project
-      run: npm run build
-
-    - name: Copy files via scp
-      env:
-        SERVER_USER: ${{ secrets.SERVER_USER }}
-        SERVER_IP: ${{ secrets.SERVER_IP }}
-        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-      run: |
-        mkdir -p ~/.ssh
-        echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
-        chmod 600 ~/.ssh/id_rsa
-        # Remove old dist folder from server
-        ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_IP "rm -rf /root/nginx-docker/dist"
-        # Copy new dist folder
-        scp -r ./dist $SERVER_USER@$SERVER_IP:/root/nginx-docker/
-
-    - name: Rebuild and restart NGINX container
-      env:
-        SERVER_USER: ${{ secrets.SERVER_USER }}
-        SERVER_IP: ${{ secrets.SERVER_IP }}
-        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-      run: |
-        ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_IP << EOF
-          # Stop and remove the old container
-          docker stop my_custom_nginx || true
-          docker rm my_custom_nginx || true
-          
-          # Navigate to the directory containing the Dockerfile
-          cd /root/nginx-docker
-          
-          # Rebuild the Docker image
-          docker build -t mynginx .
-          
-          # Run the new container with port forwarding
-          docker run -d --restart always --name my_custom_nginx -p 80:80 -p 443:443 mynginx
-        EOF
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Install dependencies
+        run: npm install
+      - name: create .env
+        run: echo "VITE_githubToken=${{ secrets.PROJECTS_TOKEN }}" >> .env
+      - name: Build project
+        run: npm run build
+      - name: Remove old files and Copy new files
+        run: |
+          TARGET_DIR="$HOME/html/elianrenteria.dev"
+          # Ensure the target directory exists
+          mkdir -p "$TARGET_DIR"
+          # Remove old files but keep the directory
+          rm -rf "$TARGET_DIR"/* || true
+          # Copy new files
+          cp -r ./dist/* "$TARGET_DIR/"
